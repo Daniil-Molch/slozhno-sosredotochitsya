@@ -12,9 +12,9 @@
   background-attachment: fixed;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 .header {
   position: relative;
   height: 768px;
@@ -158,6 +158,7 @@ h4 {
   block-size: 100%;
 }
 .footer {
+  min-height: 768px;
   justify-self: center;
   align-self: center;
   font-weight: 700;
@@ -171,6 +172,7 @@ h4 {
   font-size: clamp(7.25rem, 7rem + 1vw, 7.5rem);
   line-height: 82.5%;
   text-shadow: 4px 4px 0px var(--accent-color, #ff8dcb);
+  margin-top: 380px;
 }
 
 @media (width >= 768px) {
