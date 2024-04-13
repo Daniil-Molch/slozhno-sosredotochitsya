@@ -1,4 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* body{
+  overflow-x: hidden;
+} */
 .page {
   color: var(--text-color, #353430);
   font-family: var(--font-family, "IBM Plex Mono", monospace);
@@ -15,15 +18,15 @@
 /* * {
   border: 1px solid red;
 } */
-.header {
+/* .header {
   position: relative;
   height: 100vh;
   min-height: 768px;
   max-width: 1024px;
   display: grid;
-}
+} */
 
-.header-title {
+.big-title {
   justify-self: start;
   color: var(--heading-color, #ffc2e6);
   font-size: clamp(7.25rem, 7rem + 1vw, 7.5rem);
@@ -39,32 +42,18 @@
   line-height: inherit;
   background: var(--accent-color, #ff0070);
 }
-.article {
-  display: grid;
-  gap: 10px;
-}
-.images {
-  display: grid;
-  gap: 10px;
-}
-.image-item {
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  block-size: 100%;
-  inline-size: 100%;
-}
+
 .cover {
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   min-block-size: 100vh;
 }
-.decoration {
+.decorated-zone {
   position: relative;
 }
 
-.decoration::before,
-.decoration::after {
+.decorated-zone::before,
+.decorated-zone::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -72,57 +61,89 @@
   block-size: 25px;
 }
 
-.decoration::before {
+.decorated-zone::before {
   border-inline-end: 1px solid var(--secondary-color, #ff0070);
   border-block-start: 1px solid var(--secondary-color, #ff0070);
   inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
 }
 
-.decoration::after {
+.decorated-zone::after {
   border-inline-start: 1px solid var(--secondary-color, #ff0070);
   border-block-end: 1px solid var(--secondary-color, #ff0070);
   inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
   inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
 }
+.decoration {
+  position: absolute;
+  z-index: -1;
+  visibility: var(--rec-decor-visibility, visible);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: 20px;
+  inset-block-start: 10px;
+}
+
+.decoration::before {
+  content: "REC";
+  color: var(--accent-color, #ff0070);
+  line-height: 24px;
+}
+
+.decoration::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--accent-color, #ff0070);
+  background: var(--accent-color, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
 .header {
   align-items: start;
 }
+
 .header__theme-menu {
   justify-self: end;
   margin-block: 65px;
 }
+
 .header__theme-menu-list {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .header__theme-menu-button {
-  padding: 0px 13px;
-  color: var(--menu-color, #353430);
   border: 1px solid transparent;
   padding: 2px 12px;
+  color: var(--secondary-color, #ff0070);
   line-height: 18px;
   text-transform: lowercase;
   background: transparent;
   cursor: pointer;
 }
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--hover-border-color, rgba(50, 49, 45, 0.4));
-}
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--menu-color, #353430);
-}
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--menu-color, #353430);
+  border-color: currentColor;
+  cursor: default;
   pointer-events: none;
 }
-.header__theme-menu-button:focus {
-  outline: none;
+
+.header__theme-menu-button:hover {
+  border-color: var(--secondary-color-o-40, #ff007040);
 }
-.rec-decor .main {
+
+.header__theme-menu-button:focus {
+  outline: 0;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end-color: currentColor;
+}
+.main {
   display: grid;
   gap: 50px;
   padding: 40px 10px;
@@ -130,6 +151,14 @@
 .section {
   display: grid;
   gap: 20px;
+}
+.include {
+  display: grid;
+  gap: 20px;
+}
+.article {
+  display: grid;
+  gap: 10px;
 }
 .link {
   text-decoration: none;
@@ -148,19 +177,19 @@
   outline: 1px solid var(--text-color, #353430);
 }
 .section-title {
-  color: var(--secondary-color, #ff0070);
+  color: var(--title-color, #ff0070);
   font-weight: 700;
   font-size: inherit;
   line-height: inherit;
 }
-
 .section-title-decor {
   color: var(--highlight-color, #000028);
   background: var(--accent-color, #ff0070);
 }
-.section-title-how{
+.section-title-how {
   margin-block-end: 20px;
 }
+
 .arts {
   /* display: grid;
   grid-template-rows: auto;
@@ -171,15 +200,21 @@
   display: grid;
   gap: 10px;
 }
+.image-item {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
 
 .footer {
   place-items: center;
-  /* justify-self: center;
-  align-self: center;
-  font-weight: 700;
-  text-shadow: 2px 2px 0px var(--accent-color, #ff8dcb); */
 }
-.footer-title {
+.title-decor{
+  justify-self: center;
+}
+/* .footer-title {
   position: relative;
   left: calc(50% - 471px / 2 + 0.5px);
   top: calc(50% - 130px / 2);
@@ -187,16 +222,16 @@
   font-size: clamp(7.25rem, 7rem + 1vw, 7.5rem);
   line-height: 82.5%;
   text-shadow: 4px 4px 0px var(--accent-color, #ff8dcb);
-  margin-top: 380px;
-}
+  margin-top: 380px; */
 
+ 
 @media (width >= 768px) {
-  .rec-decor {
+  .decoration {
     inset-inline-end: 28px;
     inset-block-start: 20px;
   }
 
-  .header-title {
+  .big-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -253,7 +288,7 @@
 }
 
 @media (width >= 1024px) {
-  .header-title {
+  .big-title {
     text-shadow: 4px 4px 0 var(--color-purple-2, #ff0070);
   }
 
