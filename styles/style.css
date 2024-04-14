@@ -39,7 +39,7 @@
 .cover {
   display: grid;
   padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
-  min-block-size: 100vh;
+  height: 100vh;
   min-height: 668px;
 }
 
@@ -115,7 +115,7 @@
 .header__theme-menu-button {
   border: 1px solid transparent;
   padding: 2px 12px;
-  color: var(--change-color, #ff0070); 
+  color: var(--change-color, #ff0070);
   line-height: 18px;
   text-transform: lowercase;
   background: transparent;
@@ -193,7 +193,8 @@
 .section-title-how {
   margin-block-end: 20px;
 }
-.regular{
+
+.regular {
   font-weight: 400;
 }
 
@@ -224,7 +225,6 @@
 .title-decor {
   justify-self: center;
 }
-
 
 @media (width >= 768px) {
   .decoration {
@@ -305,7 +305,7 @@
     justify-self: center;
     margin-inline-start: 20px;
     margin-block-start: 0;
-    margin-block-end: 215px;
+    margin-block-end:calc((215/768)*100vh) ;
   }
 
   .header__theme-menu-list {
