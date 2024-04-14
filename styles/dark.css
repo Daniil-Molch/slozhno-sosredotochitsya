@@ -14,6 +14,10 @@
     --text-color: #f1b2ce;
     --title-decor-color: #000028;
     --title-color: #ff0070;
+    --display-decor: visible;
+    --purple-color2:#ff007040;
+    --change-color:var(--purple-color,#ff0770);
+    --change-color2:var(--purple-color2,#ff007040);
   }
 
   .page {
@@ -29,6 +33,11 @@
   --menu-color: #ff0070;
   --text-color: #f1b2ce;
   --title-decor-color: #000028;
+  --highlight-color:#000028;
   --title-color: #ff0070;
+  --display-decor: visible;
+  --purple-color2:#ff007040;
+  --change-color:var(--purple-color,#ff0770);
+  --change-color2:var(--purple-color2,#ff007040);
   background-image: url(../images/cover-image-dark.png);
 }

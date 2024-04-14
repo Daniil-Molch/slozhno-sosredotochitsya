@@ -10,6 +10,11 @@
   --menu-color: #353430;
   --title-decor-color: #353430;
   --title-color: #353430;
+  --purple-color:#ff0070;
+  --purple-color2:#ff007040;
+  --highlight-color:#000028;
+  --change-color: var(--purple-color,#ff0070);
+  --change-color2:var(--purple-color2,#ff007040);
   --hover-border-color: rgba(50, 49, 45, 0.4);
   --font-family: "IBM Plex Mono", monospace;
   --font-size: 18px;
@@ -19,4 +24,5 @@
   --main-gap: 50px;
   --menu-margin: 65px;
   --promo-margin: 55px;
+  --display-decor: hidden;
 }
