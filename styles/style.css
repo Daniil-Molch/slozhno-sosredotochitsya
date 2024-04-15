@@ -29,7 +29,7 @@
 
 .light-title {
   margin-block: 55px;
-  color: var(--highlight-color, #000028);
+  color: var(--change-color3, #353430);
   font-weight: 700;
   font-size: inherit;
   line-height: inherit;
@@ -187,7 +187,7 @@
 }
 
 .section-title-decor {
-  color: var(--highlight-color, #000028);
+  color: var(--change-color3, #353430);
   background: var(--accent-color, #ff0070);
 }
 

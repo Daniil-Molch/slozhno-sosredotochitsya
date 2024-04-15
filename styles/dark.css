@@ -17,6 +17,7 @@
   --purple-color2:#ff007040;
   --change-color:var(--purple-color,#ff0770);
   --change-color2:var(--purple-color2,#ff007040);
+  --change-color3:var(--highlight-color,#000028);
   background-image: url(../images/cover-image-dark.png);
 }
 
@@ -35,6 +36,7 @@
   --purple-color2:#ff007040;
   --change-color:var(--purple-color,#ff0770);
   --change-color2:var(--purple-color2,#ff007040);
+  --change-color3:var(--highlight-color,#000028);
   background-image: url(../images/cover-image-dark.png)
 }
 
