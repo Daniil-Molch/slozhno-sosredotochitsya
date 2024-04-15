@@ -85,6 +85,7 @@
   content: "REC";
   color: var(--change-color, #ff0070);
   line-height: 24px;
+  text-transform: uppercase;
 }
 
 .decoration::after {
@@ -274,7 +275,7 @@
 
   .header__theme-menu {
     margin-block-start: 170px;
-    margin-block-end: 70px;
+    margin-block-end: 69px;
   }
 
   .light-title {
@@ -305,7 +306,7 @@
     justify-self: center;
     margin-inline-start: 20px;
     margin-block-start: 0;
-    margin-block-end:calc((215/768)*100vh) ;
+    margin-block-end: calc((215 / 768) * 100vh);
   }
 
   .header__theme-menu-list {
